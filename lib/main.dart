@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 import 'utils/export.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

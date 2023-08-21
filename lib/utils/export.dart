@@ -7,7 +7,6 @@ export '../api/create_account_api.dart';
 export '../app info/app_info.dart';
 export '../main.dart';
 export 'package:firebase_core/firebase_core.dart';
-export 'package:get/get.dart';
 export 'package:sizer/sizer.dart';
 export '../modules/auth/create  account screen/binding/create_user_account_binding.dart';
 export '../modules/auth/create  account screen/controller/create_user_account_controller.dart';
