@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onboarding/onboarding.dart';
@@ -82,15 +81,15 @@ class OnboardingScreen extends GetView<OnboardingScreenController> {
     return Scaffold(
       appBar: AppBar(),
       body: Obx(() => Onboarding(
-          pages: onboardingPagesList,
-          onPageChange: (int pageIndex) {
-            controller.selectedIndex(pageIndex);
-          },
-          startPageIndex: controller.index.value,
-          footerBuilder: (context, dragDistance, pagesLength, setIndex) {
-            return buildDecoratedBox(dragDistance, pagesLength);
-          },
-        )),
+            pages: onboardingPagesList,
+            onPageChange: (int pageIndex) {
+              controller.selectedIndex(pageIndex);
+            },
+            startPageIndex: controller.index.value,
+            footerBuilder: (context, dragDistance, pagesLength, setIndex) {
+              return buildDecoratedBox(dragDistance, pagesLength);
+            },
+          )),
     );
   }
 
@@ -121,7 +120,8 @@ class OnboardingScreen extends GetView<OnboardingScreenController> {
                           polygon: DesignType.polygon_square,
                           polygonSpacer: 14.0),
                     ),
-                  )), controller.index.value == pagesLength - 1
+                  )),
+              controller.index.value == pagesLength - 1
                   ? signupButton
                   : skipButton()
             ],

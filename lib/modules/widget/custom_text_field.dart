@@ -4,18 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
       {super.key,
-        required this.hintText,
-        required this.label,
-        this.maxLines = 1,
-        this.controller,
-        this.validator,
-        this.onFieldSubmitted,
-        this.focusNode,
-        this.keyboardType,
-        this.textInputAction,
-        this.obscureText = false,
-        this.autofocus = false,
-        this.readOnly = false, this.suffixIcon});
+      required this.hintText,
+      required this.label,
+      this.maxLines = 1,
+      this.controller,
+      this.validator,
+      this.onFieldSubmitted,
+      this.focusNode,
+      this.keyboardType,
+      this.textInputAction,
+      this.obscureText = false,
+      this.autofocus = false,
+      this.readOnly = false,
+      this.suffixIcon});
 
   final String hintText;
   final String label;
@@ -29,7 +30,8 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final bool autofocus;
   final bool readOnly;
-final Widget? suffixIcon;
+  final Widget? suffixIcon;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -45,7 +47,7 @@ final Widget? suffixIcon;
       controller: controller,
       maxLines: maxLines,
       decoration: InputDecoration(
-        suffixIcon:suffixIcon ,
+        suffixIcon: suffixIcon,
         hintText: hintText,
         hintStyle: GoogleFonts.abel(),
         label: Text(

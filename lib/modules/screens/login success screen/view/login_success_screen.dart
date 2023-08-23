@@ -31,4 +31,3 @@ class LoginSuccessScreen extends StatelessWidget {
     );
   }
 }
-

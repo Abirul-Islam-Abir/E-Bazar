@@ -1,8 +1,4 @@
-
 import 'package:flutter/material.dart';
-
-
-
 
 TextStyle displayLarge({color}) {
   return TextStyle(fontSize: 80, color: color);

@@ -21,7 +21,6 @@ class CommonText extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-
       child: Text(
         text,
         style: titleTooSmall(color: color).copyWith(fontWeight: fontWeight),

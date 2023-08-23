@@ -19,7 +19,7 @@ class HeadlineText extends StatelessWidget {
       child: Text(
         text,
         style: GoogleFonts.lilitaOne(
-          fontSize: kPrimaryBigSize ,
+          fontSize: kPrimaryBigSize,
           fontStyle: FontStyle.italic,
           color: AppColor.kPrimaryColor,
         ),

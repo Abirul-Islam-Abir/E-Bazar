@@ -13,6 +13,7 @@ class RouteName {
   static const onboardingScreen = '/On_Boarding_Screen';
   static const completeProfileScreen = '/Complete_Profile_Screen';
   static const loginSuccessScreen = '/Login_Success_Screen';
+  static const matchScreen = '/Match_Screen';
 
 //Don't will be create constructor
   RouteName._();

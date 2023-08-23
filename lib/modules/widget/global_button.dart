@@ -17,7 +17,7 @@ class GlobalButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      width: Get.width/1.2,
+      width: Get.width / 1.2,
       child: ElevatedButton(
           onPressed: onPress,
           child: Text(

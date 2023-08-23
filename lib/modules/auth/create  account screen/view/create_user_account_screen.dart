@@ -86,7 +86,7 @@ class CreateUserAccountScreen extends GetView<CreateUserAccountController> {
                     text: AppString.createAccount,
                   ),
                   const SizedBox(height: kPrimaryBigSize),
-                /*  Row(
+                  /*  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       FlutterSocialButton(

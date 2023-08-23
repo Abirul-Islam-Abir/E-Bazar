@@ -1,3 +1,5 @@
+import 'package:ecommerce_firebase/assignment/first_screen.dart';
+import 'package:ecommerce_firebase/assignment/first_screen_binding.dart';
 import 'package:get/get.dart';
 
 import '../modules/auth/complete profile screen/binding/complete_profile_screen_binding.dart';
@@ -50,6 +52,12 @@ List<GetPage<dynamic>>? appPages() => [
           name: RouteName.loginSuccessScreen,
           page: () => const LoginSuccessScreen(),
           binding: LoginSuccessScreenBinding(),
+          transition: Transition.fade,
+          transitionDuration: const Duration(microseconds: 500)),
+      GetPage(
+          name: RouteName.matchScreen,
+          page: () => const FirstScreen(),
+          binding: FirstScreenBinding(),
           transition: Transition.fade,
           transitionDuration: const Duration(microseconds: 500)),
     ];

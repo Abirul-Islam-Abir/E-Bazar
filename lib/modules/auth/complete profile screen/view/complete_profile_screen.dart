@@ -95,12 +95,12 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                   const SizedBox(height: kPrimaryBigSize),
                   GlobalButton(
                     onPress: () {
-                    //  controller.addUser();
+                      //  controller.addUser();
                     },
                     text: AppString.continues,
                   ),
                   const SizedBox(height: kPrimaryBigSize),
-                 /* Row(
+                  /* Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       FlutterSocialButton(
