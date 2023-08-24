@@ -7,11 +7,7 @@ import 'modules/fcm pushnotification/local notification service/local_notificati
 import 'utils/export.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
-  NotificationService().initializeApp();
-  Get.put(FcmMessagingController());
+  initializer();
   runApp(const MyApp());
 }
 
@@ -32,10 +28,18 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: mainTheme(),
-        initialRoute: RouteName.matchScreen,
+        initialRoute: RouteName.homeScreen,
         //   initialRoute: RouteName.homeScreen,
         getPages: appPages(),
       );
     });
   }
+}
+
+void initializer() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+  NotificationService().initializeApp();
+  Get.put(FcmMessagingController());
 }
