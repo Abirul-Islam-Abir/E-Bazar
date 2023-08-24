@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import 'utils/export.dart';
 
 Future<void> main() async {
@@ -9,6 +10,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: mainTheme(),
         initialRoute: RouteName.matchScreen,
+        // initialRoute: RouteName.onboardingScreen,
         getPages: appPages(),
       );
     });

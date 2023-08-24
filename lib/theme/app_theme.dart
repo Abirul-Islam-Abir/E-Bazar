@@ -22,7 +22,8 @@ ElevatedButtonThemeData globalElevatedButtonStyle() => ElevatedButtonThemeData(
     );
 
 AppBarTheme globalAppBarTheme() => const AppBarTheme(
-      centerTitle: true,
-      iconTheme: IconThemeData(color: AppColor.kPrimaryColor),
-      elevation: 0,
-    );
+    backgroundColor: AppColor.kWhiteColor,
+    iconTheme: IconThemeData(color: AppColor.kPrimaryColor),
+    titleTextStyle: TextStyle(color: AppColor.kTextColor),
+    centerTitle: true,
+    elevation: 0);

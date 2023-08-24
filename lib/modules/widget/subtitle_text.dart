@@ -28,7 +28,6 @@ class SubtitleText extends StatelessWidget {
             fontWeight: fontWeight,
             fontStyle: FontStyle.italic),
         maxLines: 2,
-        overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.center,
       ),
     );

@@ -25,14 +25,16 @@ class FirstScreen extends GetView<FirstScreenController> {
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (context, index) => ListTile(
                 onTap: () {
-                  Get.to(()=>SecondScreen(
-                    groupA: snapshot.data!.docs[index]['groupA']??'',
-                    groupB: snapshot.data!.docs[index]['groupB']??'',
-                    groupAScore: snapshot.data!.docs[index]['groupAScore']??'',
-                    groupBScore: snapshot.data!.docs[index]['groupBScore']??'',
-                    remainingTime: snapshot.data!.docs[index]['remainingTime']??'',
-                    totalTime: snapshot.data!.docs[index]['totalTime']??'',
-                  ));
+                  QueryDocumentSnapshot<Object?> data =
+                      snapshot.data!.docs[index];
+                  Get.to(() => SecondScreen(
+                        groupA: data['groupA'],
+                        groupB: data['groupB'],
+                        groupAScore: data['groupAScore'],
+                        groupBScore: data['groupBScore'],
+                        remainingTime: data['remainingTime'],
+                        totalTime: data['totalTime'],
+                      ));
                 },
                 title: Text(
                     '${snapshot.data!.docs[index]['groupA']} VS ${snapshot.data!.docs[index]['groupB']}'),

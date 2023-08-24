@@ -11,11 +11,14 @@ class AppString {
   static const String enterYourDescription = 'Enter Your Description';
   static const String password = 'Password';
   static const String login = 'Login';
+  static const String skip = 'Skip';
   static const String loginSuccess = 'Login Success';
+  static const String buyNow = 'Buy now';
   static const String confirmPassword = 'Confirm Password';
   static const String forgotPassword = 'Forgot Password?';
   static const String completeProfile = 'Complete Profile';
   static const String rememberMe = 'Remember me';
+  static const String letsGetStarted =  'Let\'s Get Started';
   static const String completeDummy =
       'Complete your personal details or continue with social media';
   static const String dontHaveAnAccount = 'Don\'t have an account ? ';

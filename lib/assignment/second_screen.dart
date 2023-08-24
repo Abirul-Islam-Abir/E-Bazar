@@ -23,34 +23,48 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Display'),
+        title: Text('Leaderboard'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Card(
-          elevation: 10,
-          child: Container(
-            height: 150,
-            width: Get.width,
-            child: Column(
-              children: [
-                Text('${groupA} VS ${groupB}',
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: AppColor.kPurpleColor)),
-                Text('${groupAScore} : ${groupBScore}',
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: AppColor.kBlueColor)),
-                Text('Time: ${remainingTime}',
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: AppColor.kPurpleColor)),
-                Text('Total Time: ${totalTime}',
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: AppColor.kPurpleColor)),
-              ],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(kDefaultSize),
+          child: Card(
+            elevation: 10,
+            child: SizedBox(
+              height: 150,
+              width: Get.width,
+              child: Column(
+                children: [
+                  Text('${groupA} VS ${groupB}',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.kPurpleColor)),
+                  Text('${groupAScore} : ${groupBScore}',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium!
+                          .copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.kBlueColor)),
+                  Text('Time: ${remainingTime}',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.kPurpleColor)),
+                  Text('Total Time: ${totalTime}',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.kPurpleColor)),
+                ],
+              ),
             ),
           ),
         ),
