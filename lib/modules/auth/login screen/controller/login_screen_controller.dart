@@ -1,7 +1,4 @@
-import 'package:get/get.dart';
-
-import '../../../../../utils/export.dart';
-import '../../../../api/login_api.dart';
+import '../../../../utils/export.dart';
 
 class LoginScreenController extends GetxController {
   final TextEditingController emailController = TextEditingController();

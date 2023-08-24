@@ -1,10 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_firebase/assignment/first_screen_controller.dart';
 import 'package:ecommerce_firebase/assignment/second_screen.dart';
-import 'package:ecommerce_firebase/modules/fcm%20pushnotification/local%20notification%20service/local_notification_service.dart';
-import 'package:get/get.dart';
 
 import '../utils/export.dart';
+import 'first_screen_controller.dart';
 
 class FirstScreen extends GetView<FirstScreenController> {
   const FirstScreen({super.key});

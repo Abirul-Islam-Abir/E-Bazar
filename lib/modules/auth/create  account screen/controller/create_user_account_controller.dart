@@ -1,15 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-
-import '../../../../api/create_account_api.dart';
-import '../../../../routes/app_route_name.dart';
+import '../../../../utils/export.dart';
 
 class CreateUserAccountController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
-      TextEditingController();
+  TextEditingController();
   final FocusNode emailFocus = FocusNode();
   final FocusNode passwordFocus = FocusNode();
   final FocusNode confirmFocus = FocusNode();
@@ -29,8 +24,8 @@ class CreateUserAccountController extends GetxController {
   }
 
   var acs = ActionCodeSettings(
-      // URL you want to redirect back to. The domain (www.example.com) for this
-      // URL must be whitelisted in the Firebase Console.
+    // URL you want to redirect back to. The domain (www.example.com) for this
+    // URL must be whitelisted in the Firebase Console.
       url: 'https://firebase.flutter.dev/docs/auth/email-link-auth',
       // This must be true
       handleCodeInApp: true,
@@ -44,10 +39,11 @@ class CreateUserAccountController extends GetxController {
   Future<void> verifyEmail() async {
     FirebaseAuth.instance
         .sendSignInLinkToEmail(
-            email: 'abir80503@gmail.com', actionCodeSettings: acs)
+        email: 'abir80503@gmail.com', actionCodeSettings: acs)
         .catchError((onError) => print(onError.toString()))
-        .then((value) => Get.offAllNamed(
-              RouteName.otpVerificationScreen,
-            ));
+        .then((value) =>
+        Get.offAllNamed(
+          RouteName.otpVerificationScreen,
+        ));
   }
 }

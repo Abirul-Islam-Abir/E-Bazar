@@ -1,14 +1,4 @@
-import 'package:ecommerce_firebase/modules/widget/headline_text.dart';
-import 'package:ecommerce_firebase/modules/widget/subtitle_text.dart';
-import 'package:ecommerce_firebase/utils/app_size.dart';
-import 'package:ecommerce_firebase/utils/base64_image_method.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
-import 'package:get/get.dart';
-
-import '../../../../routes/app_route_name.dart';
-import '../../../../utils/app_string.dart';
-import '../controller/onborading_controller.dart';
+import '../../../../utils/export.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

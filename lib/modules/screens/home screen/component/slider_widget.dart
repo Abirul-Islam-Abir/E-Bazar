@@ -1,5 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
-
 import '../../../../utils/export.dart';
 
 class SliderWidget extends StatelessWidget {

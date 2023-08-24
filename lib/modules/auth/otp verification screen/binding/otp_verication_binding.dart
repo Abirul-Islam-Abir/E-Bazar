@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controller/otp_verification_controller.dart';
+import '../../../../utils/export.dart';
 
 class OtpVerificationBinding extends Bindings {
   @override

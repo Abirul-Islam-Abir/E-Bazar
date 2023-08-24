@@ -1,5 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_firebase/model/onboarding_image_model.dart';
+import '../utils/export.dart';
 
 Future getOnboardingImageRequestApi({path, list}) async {
   final firestore = FirebaseFirestore.instance;

@@ -1,5 +1,3 @@
-import 'package:get/get.dart';
-
 import '../../../../../utils/export.dart';
 
 class CompleteProfileController extends GetxController {
@@ -11,19 +9,15 @@ class CompleteProfileController extends GetxController {
   final FocusNode lastNameFocus = FocusNode();
   final FocusNode mobileFocus = FocusNode();
   final FocusNode addressFocus = FocusNode();
-/* FirebaseFirestore firestore = FirebaseFirestore.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   var currentUserId = FirebaseAuth.instance.currentUser!.uid;
   CollectionReference users = FirebaseFirestore.instance.collection('Users');
+
   Future<void> addUser() {
-    return users
-        .doc()
-        .collection(currentUserId)
-        .add({
-          'Name': '${firstNameController.text} ${lastNameController.text}',
-          'Mobile': mobileController.text,
-          'Address': addressController.text
-        })
-        .then((value) => Get.offAllNamed(RouteName.homeScreen))
-         ;
-  }*/
+    return users.doc().collection(currentUserId).add({
+      'Name': '${firstNameController.text} ${lastNameController.text}',
+      'Mobile': mobileController.text,
+      'Address': addressController.text
+    }).then((value) => Get.offAllNamed(RouteName.homeScreen));
+  }
 }

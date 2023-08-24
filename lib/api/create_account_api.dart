@@ -1,5 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:get/get.dart';
+import '../utils/export.dart';
 
 Future<bool> createAccountRequestApi({emailAddress, password}) async {
   try {

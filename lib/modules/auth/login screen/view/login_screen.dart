@@ -1,7 +1,4 @@
-import 'package:get/get.dart';
-
-import '../../../../../utils/export.dart';
-import '../../../widget/long_line_text.dart';
+import '../../../../utils/export.dart';
 
 class LoginScreen extends GetView<LoginScreenController> {
   const LoginScreen({super.key});

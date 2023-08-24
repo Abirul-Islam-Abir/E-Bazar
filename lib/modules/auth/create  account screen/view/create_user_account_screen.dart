@@ -1,7 +1,4 @@
-import 'package:get/get.dart';
-
-import '../../../../../utils/export.dart';
-import '../../../widget/long_line_text.dart';
+import '../../../../utils/export.dart';
 
 class CreateUserAccountScreen extends GetView<CreateUserAccountController> {
   const CreateUserAccountScreen({super.key});

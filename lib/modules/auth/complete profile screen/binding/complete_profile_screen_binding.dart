@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controller/complete_profile_screen_controller.dart';
+import '../../../../utils/export.dart';
 
 class CompleteProfileScreenBinding extends Bindings {
   @override

@@ -1,8 +1,4 @@
-import 'package:get/get.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-
-import '../../../../../utils/export.dart';
-import '../controller/otp_verification_controller.dart';
+import '../../../../utils/export.dart';
 
 class OtpVerificationScreen extends GetView<OtpVerificationController> {
   const OtpVerificationScreen({super.key});

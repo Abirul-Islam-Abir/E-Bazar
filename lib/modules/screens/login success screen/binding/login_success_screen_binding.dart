@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controller/login_success_screen_controller.dart';
+import '../../../../utils/export.dart';
 
 class LoginSuccessScreenBinding extends Bindings {
   @override

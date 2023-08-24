@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../../../../../utils/export.dart';
+import '../../../../utils/export.dart';
 
 class LoginScreenBinding extends Bindings {
   @override

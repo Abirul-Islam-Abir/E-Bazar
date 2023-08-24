@@ -1,14 +1,5 @@
-import 'package:ecommerce_firebase/assignment/first_screen.dart';
-import 'package:ecommerce_firebase/assignment/first_screen_binding.dart';
-import 'package:get/get.dart';
-
-import '../modules/auth/complete profile screen/binding/complete_profile_screen_binding.dart';
-import '../modules/auth/complete profile screen/view/complete_profile_screen.dart';
-import '../modules/auth/login screen/view/login_screen.dart';
-import '../modules/auth/otp verification screen/binding/otp_verication_binding.dart';
-import '../modules/auth/otp verification screen/view/otp_verification_screen.dart';
-import '../modules/screens/login success screen/binding/login_success_screen_binding.dart';
-import '../modules/screens/login success screen/view/login_success_screen.dart';
+import '../assignment/first_screen.dart';
+import '../assignment/first_screen_binding.dart';
 import '../utils/export.dart';
 
 List<GetPage<dynamic>>? appPages() => [

@@ -1,11 +1,4 @@
-import 'package:ecommerce_firebase/utils/export.dart';
-import 'package:get/get.dart';
-
-import '../../../../model/product_model.dart';
-import '../component/build_app_bar.dart';
-import '../component/more_button.dart';
-import '../component/product_card.dart';
-import '../component/slider_widget.dart';
+import '../../../../utils/export.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
   const HomeScreen({super.key});

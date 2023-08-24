@@ -1,5 +1,3 @@
-import 'package:get/get.dart';
-
 import '../../../../utils/export.dart';
 
 class HomeScreenBinding extends Bindings {

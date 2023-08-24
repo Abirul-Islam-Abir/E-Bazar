@@ -1,7 +1,4 @@
-import 'package:get/get.dart';
-
 import '../../../../../utils/export.dart';
-import '../controller/complete_profile_screen_controller.dart';
 
 class CompleteProfileScreen extends GetView<CompleteProfileController> {
   const CompleteProfileScreen({super.key});
@@ -95,7 +92,7 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                   const SizedBox(height: kPrimaryBigSize),
                   GlobalButton(
                     onPress: () {
-                      //  controller.addUser();
+                      controller.addUser();
                     },
                     text: AppString.continues,
                   ),
@@ -120,7 +117,7 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                       ),
                     ],
                   ),*/
-                  //firestore ta add koren
+
                   const Spacer(),
                   const CommonText(
                     text: 'Continuing that confirm to our terms & conditions!',
