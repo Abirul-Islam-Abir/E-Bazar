@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_firebase/assignment/first_screen_controller.dart';
 import 'package:ecommerce_firebase/assignment/second_screen.dart';
+import 'package:ecommerce_firebase/modules/fcm%20pushnotification/local%20notification%20service/local_notification_service.dart';
 import 'package:get/get.dart';
 
 import '../utils/export.dart';
@@ -11,13 +12,13 @@ class FirstScreen extends GetView<FirstScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Match List')),
+      appBar: AppBar(title: const Text('Match List')),
       body: StreamBuilder<QuerySnapshot>(
           stream: controller.collection.snapshots(),
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (!snapshot.hasData) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
@@ -27,6 +28,11 @@ class FirstScreen extends GetView<FirstScreenController> {
                 onTap: () {
                   QueryDocumentSnapshot<Object?> data =
                       snapshot.data!.docs[index];
+                  NotificationService().showNotification(
+                      1,
+                      '${data['groupA']} VS ${data['groupB']} ',
+                      'RemainingTime: ${data['remainingTime']}',
+                      'remainingTime: ${data['remainingTime']}');
                   Get.to(() => SecondScreen(
                         groupA: data['groupA'],
                         groupB: data['groupB'],
@@ -38,7 +44,7 @@ class FirstScreen extends GetView<FirstScreenController> {
                 },
                 title: Text(
                     '${snapshot.data!.docs[index]['groupA']} VS ${snapshot.data!.docs[index]['groupB']}'),
-                trailing: Icon(Icons.arrow_forward),
+                trailing: const Icon(Icons.arrow_forward),
               ),
             );
           }),

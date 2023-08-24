@@ -13,7 +13,7 @@ class MoreButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(kDefaultSize),
+      padding: const EdgeInsets.all(kDefaultSize),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

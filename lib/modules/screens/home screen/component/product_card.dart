@@ -18,20 +18,20 @@ class ProductCard extends StatelessWidget {
     return Card(
       elevation: 10,
       child: Padding(
-        padding:   EdgeInsets.symmetric(horizontal: 5),
+        padding:   const EdgeInsets.symmetric(horizontal: 5),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Align(
                 alignment: Alignment.center,
                 child: Image.network(img, height: 70, width: 70)),
-            Spacer(),
-            Text('${name}', style: Theme.of(context).textTheme.titleSmall),
-            Text('\$${price}',
+            const Spacer(),
+            Text(name, style: Theme.of(context).textTheme.titleSmall),
+            Text('\$$price',
                 style: Theme.of(context)
                     .textTheme
                     .titleSmall!
                     .copyWith(fontWeight: FontWeight.bold)),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.only(right: kDefaultSize),
               child: Row(
@@ -41,18 +41,18 @@ class ProductCard extends StatelessWidget {
                       child: FittedBox(
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
+                                  shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.only(
                                           topRight:
                                           Radius.circular(kPrimaryBigSize))),
                                   backgroundColor: AppColor.kPurpleColor),
                               onPressed:buyNow,
-                              child: Text(AppString.buyNow)))),
+                              child: const Text(AppString.buyNow)))),
                   Expanded(
                       flex: 1,
                       child: IconButton(
                           onPressed:  isFav,
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.heart_broken,
                             color: AppColor.kRedColor,
                           ))),

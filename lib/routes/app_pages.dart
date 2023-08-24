@@ -14,7 +14,7 @@ import '../utils/export.dart';
 List<GetPage<dynamic>>? appPages() => [
       GetPage(
           name: RouteName.onboardingScreen,
-          page: () => OnboardingScreen(),
+          page: () => const OnboardingScreen(),
           binding: OnboardingScreenBindings(),
           transition: Transition.fade,
           transitionDuration: const Duration(microseconds: 500)),

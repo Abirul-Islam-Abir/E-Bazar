@@ -23,7 +23,7 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Leaderboard'),
+        title: const Text('Leaderboard'),
       ),
       body: Center(
         child: Padding(
@@ -35,28 +35,28 @@ class SecondScreen extends StatelessWidget {
               width: Get.width,
               child: Column(
                 children: [
-                  Text('${groupA} VS ${groupB}',
+                  Text('$groupA VS $groupB',
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall!
                           .copyWith(
                               fontWeight: FontWeight.bold,
-                              color: AppColor.kPurpleColor)),
-                  Text('${groupAScore} : ${groupBScore}',
+                              color: AppColor.kRedColor)),
+                  Text('$groupAScore : $groupBScore',
                       style: Theme.of(context)
                           .textTheme
                           .headlineMedium!
                           .copyWith(
                               fontWeight: FontWeight.bold,
                               color: AppColor.kBlueColor)),
-                  Text('Time: ${remainingTime}',
+                  Text('Time: $remainingTime',
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall!
                           .copyWith(
                               fontWeight: FontWeight.bold,
                               color: AppColor.kPurpleColor)),
-                  Text('Total Time: ${totalTime}',
+                  Text('Total Time: $totalTime',
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall!

@@ -21,7 +21,7 @@ class HomeScreen extends GetView<HomeScreenController> {
           GetBuilder<HomeScreenController>(builder: (controller) {
             return Visibility(
               visible: controller.isLoading,
-              replacement: CircularProgressIndicator(),
+              replacement: const CircularProgressIndicator(),
               child: SliderWidget(
                 items: List.generate(
                     controller.sliderImageList.length,

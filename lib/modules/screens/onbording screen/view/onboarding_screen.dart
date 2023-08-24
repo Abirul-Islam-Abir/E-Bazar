@@ -23,7 +23,7 @@ class OnboardingScreen extends StatelessWidget {
                 finishButtonStyle: const FinishButtonStyle(
                   backgroundColor: Colors.black,
                 ),
-                skipTextButton: Text(AppString.skip),
+                skipTextButton: const Text(AppString.skip),
                 onFinish: () {
                   Get.offAllNamed(RouteName.loginScreen);
                 },
