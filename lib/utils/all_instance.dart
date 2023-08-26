@@ -1,0 +1,1 @@
+import 'package:ecommerce_firebase/utils/export.dart';class Instance {  static FirebaseAuth auth = FirebaseAuth.instance;  static FirebaseFirestore firestore = FirebaseFirestore.instance;  static final currentUser = FirebaseAuth.instance.currentUser;  static final userEmail = FirebaseAuth.instance.currentUser!.email;  Instance._();}

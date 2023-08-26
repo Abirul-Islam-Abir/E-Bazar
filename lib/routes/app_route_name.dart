@@ -14,6 +14,7 @@ class RouteName {
   static const completeProfileScreen = '/Complete_Profile_Screen';
   static const loginSuccessScreen = '/Login_Success_Screen';
   static const matchScreen = '/Match_Screen';
+  static const userAccountList = '/User_Account_List';
 
 //Don't will be create constructor
   RouteName._();

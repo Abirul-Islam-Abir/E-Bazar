@@ -12,4 +12,11 @@ class OtpVerificationController extends GetxController {
     errorController = StreamController<ErrorAnimationType>();
     super.onInit();
   }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    formKey.currentState!.reset();
+    super.dispose();
+  }
 }

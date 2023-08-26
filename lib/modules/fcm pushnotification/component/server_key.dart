@@ -1,0 +1,1 @@
+var serverKey =    'key=AAAAdfpVXqM:APA91bGrsbKNFy3qtyzni4_UHxzgzR9IsCZ7L-pnSMa6mNQFMqeLBaFkfptjXYZUqtqB10ZNXfejZtsZQhw1ezbjQraWxR4258-xWIfOPgOqdFLZIed7685ix9jd1Z970BYuBQzSqdWn';

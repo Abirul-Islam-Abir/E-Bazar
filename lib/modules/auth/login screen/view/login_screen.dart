@@ -16,6 +16,7 @@ class LoginScreen extends GetView<LoginScreenController> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Form(
+              key: controller.formKey,
               child: Column(
                 children: [
                   const Column(
@@ -29,6 +30,7 @@ class LoginScreen extends GetView<LoginScreenController> {
                   Column(
                     children: [
                       CustomTextField(
+                        validator: validateEmail,
                         focusNode: controller.emailFocus,
                         onFieldSubmitted: (v) {
                           FocusScope.of(context)
@@ -44,10 +46,13 @@ class LoginScreen extends GetView<LoginScreenController> {
                       ),
                       const SizedBox(height: kSmallSize),
                       CustomTextField(
+                        validator: validatePassword,
                         focusNode: controller.passwordFocus,
                         onFieldSubmitted: (v) {
-                          FocusScope.of(context).unfocus();
+                          controller.validateSubmit();
                         },
+
+
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.name,
                         controller: controller.passwordController,
@@ -83,7 +88,7 @@ class LoginScreen extends GetView<LoginScreenController> {
                   const SizedBox(height: kPrimaryBigSize),
                   GlobalButton(
                     onPress: () {
-                      controller.loginRequest();
+                      controller.validateSubmit();
                     },
                     text: AppString.login,
                   ),

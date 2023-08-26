@@ -16,6 +16,7 @@ class CreateUserAccountScreen extends GetView<CreateUserAccountController> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Form(
+              key: controller.formKey,
               child: Column(
                 children: [
                   const Column(
@@ -29,6 +30,7 @@ class CreateUserAccountScreen extends GetView<CreateUserAccountController> {
                   Column(
                     children: [
                       CustomTextField(
+                        validator: validateEmail,
                         focusNode: controller.emailFocus,
                         onFieldSubmitted: (v) {
                           FocusScope.of(context)
@@ -44,6 +46,7 @@ class CreateUserAccountScreen extends GetView<CreateUserAccountController> {
                       ),
                       const SizedBox(height: kSmallSize),
                       CustomTextField(
+                        validator: validatePassword,
                         focusNode: controller.passwordFocus,
                         onFieldSubmitted: (v) {
                           FocusScope.of(context)
@@ -60,9 +63,10 @@ class CreateUserAccountScreen extends GetView<CreateUserAccountController> {
                       ),
                       const SizedBox(height: kSmallSize),
                       CustomTextField(
+                        validator: validatePassword,
                         focusNode: controller.confirmFocus,
                         onFieldSubmitted: (v) {
-                          FocusScope.of(context).unfocus();
+                          controller.validateSubmit();
                         },
                         textInputAction: TextInputAction.done,
                         keyboardType: TextInputType.name,
@@ -78,7 +82,7 @@ class CreateUserAccountScreen extends GetView<CreateUserAccountController> {
                   const SizedBox(height: kPrimaryBigSize),
                   GlobalButton(
                     onPress: () {
-                      controller.createAccount();
+                      controller.validateSubmit();
                     },
                     text: AppString.createAccount,
                   ),

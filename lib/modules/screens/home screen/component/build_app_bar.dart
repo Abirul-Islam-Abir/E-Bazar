@@ -6,7 +6,12 @@ AppBar buildAppBar() {
     title: const HeadlineText(text: 'E-Bazar'),
     actions: [
       IconButton(
-          onPressed: () {}, icon: const Icon(Icons.shopping_cart_checkout))
+          onPressed: () async {
+            await FirebaseAuth.instance.signOut().then(
+                  (value) => Get.offAllNamed(RouteName.loginScreen),
+                );
+          },
+          icon: const Icon(Icons.shopping_cart_checkout))
     ],
   );
 }

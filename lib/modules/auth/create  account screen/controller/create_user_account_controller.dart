@@ -1,13 +1,18 @@
+import 'package:ecommerce_firebase/utils/const.dart';
+import 'package:ecommerce_firebase/utils/shared_pref.dart';
+
 import '../../../../utils/export.dart';
 
 class CreateUserAccountController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
-  TextEditingController();
+      TextEditingController();
+
   final FocusNode emailFocus = FocusNode();
   final FocusNode passwordFocus = FocusNode();
   final FocusNode confirmFocus = FocusNode();
+  final formKey = GlobalKey<FormState>();
 
   void createAccount() async {
     if (passwordController.text.trim() ==
@@ -16,6 +21,10 @@ class CreateUserAccountController extends GetxController {
           emailAddress: emailController.text.trim(),
           password: passwordController.text.trim());
       if (response == true) {
+        storeAccountCreatedData(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+            photo: base64ImageUrl);
         Get.toNamed(RouteName.completeProfileScreen);
       } else {
         Get.snackbar('Failed!', 'Account creation failed!');
@@ -23,27 +32,22 @@ class CreateUserAccountController extends GetxController {
     }
   }
 
-  var acs = ActionCodeSettings(
-    // URL you want to redirect back to. The domain (www.example.com) for this
-    // URL must be whitelisted in the Firebase Console.
-      url: 'https://firebase.flutter.dev/docs/auth/email-link-auth',
-      // This must be true
-      handleCodeInApp: true,
-      iOSBundleId: 'com.example.ios',
-      androidPackageName: 'com.example.firebase2',
-      // installIfNotAvailable
-      androidInstallApp: true,
-      // minimumVersion
-      androidMinimumVersion: '12');
+  void validateSubmit() {
+    confirmFocus.unfocus();
+    if (formKey.currentState!.validate()) {
+      createAccount();
+    }
+  }
 
-  Future<void> verifyEmail() async {
-    FirebaseAuth.instance
-        .sendSignInLinkToEmail(
-        email: 'abir80503@gmail.com', actionCodeSettings: acs)
-        .catchError((onError) => print(onError.toString()))
-        .then((value) =>
-        Get.offAllNamed(
-          RouteName.otpVerificationScreen,
-        ));
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    emailFocus.dispose();
+    passwordFocus.dispose();
+    confirmFocus.dispose();
+    formKey.currentState!.reset();
+    super.dispose();
   }
 }

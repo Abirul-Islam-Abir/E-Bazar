@@ -55,7 +55,7 @@ String? validateMobile(String? value) {
 
 String? validate(String? text) {
   if (text!.isEmpty) {
-    return 'Required some text';
+    return 'Empty field!';
   }
   return null;
   // String patttern = r'^[a-z A-Z,.\-]+$';

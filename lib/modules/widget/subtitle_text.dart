@@ -9,17 +9,17 @@ class SubtitleText extends StatelessWidget {
     super.key,
     required this.text,
     this.fontWeight = FontWeight.bold,
-    this.color = AppColor.kTextColor,
+    this.color = AppColor.kTextColor,   this.align =Alignment.topCenter,
   });
 
   final String text;
   final FontWeight? fontWeight;
   final Color? color;
-
+final Alignment align;
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.topCenter,
+      alignment: align,
       child: Text(
         text,
         style: GoogleFonts.cormorant(

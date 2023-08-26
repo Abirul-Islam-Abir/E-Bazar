@@ -1,3 +1,4 @@
+import 'package:ecommerce_firebase/utils/app_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,7 +17,9 @@ class CustomTextField extends StatelessWidget {
       this.obscureText = false,
       this.autofocus = false,
       this.readOnly = false,
-      this.suffixIcon});
+      this.suffixIcon,
+      this.initialValue,
+      this.onChanged});
 
   final String hintText;
   final String label;
@@ -31,11 +34,14 @@ class CustomTextField extends StatelessWidget {
   final bool autofocus;
   final bool readOnly;
   final Widget? suffixIcon;
-
+  final String? initialValue;
+  final Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       obscuringCharacter: '*',
+      initialValue: initialValue,
       readOnly: readOnly,
       autofocus: autofocus,
       obscureText: obscureText,
@@ -47,6 +53,7 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       maxLines: maxLines,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.all(kTextSize),
         suffixIcon: suffixIcon,
         hintText: hintText,
         hintStyle: GoogleFonts.abel(),

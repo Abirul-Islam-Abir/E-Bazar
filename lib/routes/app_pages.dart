@@ -1,3 +1,7 @@
+import 'package:ecommerce_firebase/admin/user_list_screen/user_list_screen.dart';
+import 'package:ecommerce_firebase/modules/screens/splash%20screen/binding/splash_screen_binding.dart';
+import 'package:ecommerce_firebase/modules/screens/splash%20screen/view/splash_screen.dart';
+
 import '../assignment/first_screen.dart';
 import '../assignment/first_screen_binding.dart';
 import '../utils/export.dart';
@@ -49,6 +53,18 @@ List<GetPage<dynamic>>? appPages() => [
           name: RouteName.matchScreen,
           page: () => const FirstScreen(),
           binding: FirstScreenBinding(),
+          transition: Transition.fade,
+          transitionDuration: const Duration(microseconds: 500)),
+      GetPage(
+          name: RouteName.userAccountList,
+          page: () => UserAccountList(),
+          binding: FirstScreenBinding(),
+          transition: Transition.fade,
+          transitionDuration: const Duration(microseconds: 500)),
+      GetPage(
+          name: RouteName.splashScreen,
+          page: () => const SplashScreen(),
+          binding: SplashScreenBinding(),
           transition: Transition.fade,
           transitionDuration: const Duration(microseconds: 500)),
     ];

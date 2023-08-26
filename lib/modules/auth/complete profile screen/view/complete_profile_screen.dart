@@ -11,11 +11,12 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
       ),
       body: SingleChildScrollView(
         child: SizedBox(
-          height: Get.height / 1.2,
+          height: Get.height / 1.1,
           width: Get.width,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Form(
+              key: controller.formKey,
               child: Column(
                 children: [
                   const Column(
@@ -25,10 +26,11 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                       SubtitleText(text: AppString.completeDummy)
                     ],
                   ),
-                  const SizedBox(height: kPrimaryBigSize),
+                  const SizedBox(height: kDefaultSize),
                   Column(
                     children: [
                       CustomTextField(
+                        validator: validate,
                         focusNode: controller.firstNameFocus,
                         onFieldSubmitted: (v) {
                           FocusScope.of(context)
@@ -44,6 +46,7 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                       ),
                       const SizedBox(height: kSmallSize),
                       CustomTextField(
+                        validator: validate,
                         focusNode: controller.lastNameFocus,
                         onFieldSubmitted: (v) {
                           FocusScope.of(context)
@@ -59,6 +62,7 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                       ),
                       const SizedBox(height: kSmallSize),
                       CustomTextField(
+                        validator: validateMobile,
                         focusNode: controller.mobileFocus,
                         onFieldSubmitted: (v) {
                           FocusScope.of(context)
@@ -74,9 +78,10 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                       ),
                       const SizedBox(height: kSmallSize),
                       CustomTextField(
+                        validator: validate,
                         focusNode: controller.addressFocus,
                         onFieldSubmitted: (v) {
-                          FocusScope.of(context).unfocus();
+                          controller.validateSubmit();
                         },
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.name,
@@ -92,7 +97,7 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                   const SizedBox(height: kPrimaryBigSize),
                   GlobalButton(
                     onPress: () {
-                      controller.addUser();
+                      controller.validateSubmit();
                     },
                     text: AppString.continues,
                   ),
@@ -118,7 +123,6 @@ class CompleteProfileScreen extends GetView<CompleteProfileController> {
                     ],
                   ),*/
 
-                  const Spacer(),
                   const CommonText(
                     text: 'Continuing that confirm to our terms & conditions!',
                   ),

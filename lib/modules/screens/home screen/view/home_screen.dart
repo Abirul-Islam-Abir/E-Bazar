@@ -1,3 +1,5 @@
+import 'package:ecommerce_firebase/modules/screens/home%20screen/component/user_drawer_header.dart';
+
 import '../../../../utils/export.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
@@ -6,7 +8,7 @@ class HomeScreen extends GetView<HomeScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: UserDrawer(),
       appBar: buildAppBar(),
       body: ListView(
         children: [

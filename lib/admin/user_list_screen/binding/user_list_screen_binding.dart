@@ -1,0 +1,1 @@
+import 'package:ecommerce_firebase/admin/user_list_screen/controller/user_list_screen_controller.dart';import 'package:get/get.dart';class UserListScreenBinding extends Bindings {  @override  void dependencies() {    Get.lazyPut(() => UserListScreenController());  }}
