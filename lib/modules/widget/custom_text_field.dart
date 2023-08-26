@@ -19,7 +19,8 @@ class CustomTextField extends StatelessWidget {
       this.readOnly = false,
       this.suffixIcon,
       this.initialValue,
-      this.onChanged});
+      this.onChanged,
+      this.size = kTextSize});
 
   final String hintText;
   final String label;
@@ -36,6 +37,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final String? initialValue;
   final Function(String)? onChanged;
+  final double size;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -53,7 +55,7 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       maxLines: maxLines,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.all(kTextSize),
+        contentPadding: EdgeInsets.all(size),
         suffixIcon: suffixIcon,
         hintText: hintText,
         hintStyle: GoogleFonts.abel(),
