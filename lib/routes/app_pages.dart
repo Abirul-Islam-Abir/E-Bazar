@@ -1,4 +1,4 @@
-import 'package:ecommerce_firebase/admin/user_list_screen/user_list_screen.dart';
+import 'package:ecommerce_firebase/admin/user_list_screen/view/user_list_screen.dart';
 import 'package:ecommerce_firebase/modules/screens/splash%20screen/binding/splash_screen_binding.dart';
 import 'package:ecommerce_firebase/modules/screens/splash%20screen/view/splash_screen.dart';
 
