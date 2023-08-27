@@ -7,9 +7,7 @@ AppBar buildAppBar() {
     actions: [
       IconButton(
           onPressed: () async {
-            await FirebaseAuth.instance.signOut().then(
-                  (value) => Get.offAllNamed(RouteName.loginScreen),
-                );
+            Get.find<HomeScreenController>().logOut();
           },
           icon: const Icon(Icons.shopping_cart_checkout))
     ],

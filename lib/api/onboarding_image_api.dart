@@ -1,14 +1,24 @@
 import '../utils/export.dart';
 
-Future getOnboardingImageRequestApi({path, list}) async {
-  final firestore = FirebaseFirestore.instance;
-  final collection = await firestore.collection(path).get();
-  for (var i = 0; i < collection.docs.length; i++) {
-    list.add(
-      OnBoardingImageModel(
-          img: collection.docs[i]['img'],
-          title: collection.docs[i]['title'],
-          subtitle: collection.docs[i]['subtitle']),
-    );
+Future<void> getOnboardingImageRequestApi(
+    {required String path, required List<OnBoardingImageModel> list}) async {
+  try {
+    final firestore = FirebaseFirestore.instance;
+    final collection = await firestore.collection(path).get();
+
+    for (var doc in collection.docs) {
+      list.add(
+        OnBoardingImageModel(
+          img: doc['img'],
+          title: doc['title'],
+          subtitle: doc['subtitle'],
+        ),
+      );
+    }
+
+    // Optionally, print the list of onboarding images
+    print(list);
+  } catch (e) {
+    print('Error fetching onboarding images: $e');
   }
 }

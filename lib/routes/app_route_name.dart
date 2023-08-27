@@ -15,7 +15,18 @@ class RouteName {
   static const loginSuccessScreen = '/Login_Success_Screen';
   static const matchScreen = '/Match_Screen';
   static const userAccountList = '/User_Account_List';
+  static const helpCenterScreen = '/Help_Center_Screen';
+  static const favoritesScreen = '/Favorites_Screen';
+  static const historyScreen = '/History_Screen';
+  static const settingsScreen = '/Settings_Screen';
+  static const aboutScreen = '/About_Screen';
+  static const logOutScreen = '/Log_Out_Screen';
 
-//Don't will be create constructor
+  // Helper function to generate unique route names
+  static String generateUniqueRouteName() {
+    return '/${DateTime.now().millisecondsSinceEpoch}';
+  }
+
+  // Don't create a constructor
   RouteName._();
 }

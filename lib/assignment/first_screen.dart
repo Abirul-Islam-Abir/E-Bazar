@@ -11,66 +11,66 @@ class FirstScreen extends GetView<FirstScreenController> {
       color: AppColor.kWhiteColor,
       child: ListView(
         children: [
-          SizedBox(height: kTooSmallSize),
+          const SizedBox(height: kTooSmallSize),
           CustomTextField(
             size: kTooSmallSize,
             hintText: 'GroupA',
             label: 'GroupA',
             controller: controller.groupAController,
           ),
-          SizedBox(height: kTooSmallSize),
+          const SizedBox(height: kTooSmallSize),
           CustomTextField(
             size: kTooSmallSize,
             hintText: 'GroupASore',
             label: 'GroupASore',
             controller: controller.groupAScoreController,
           ),
-          SizedBox(height: kTooSmallSize),
+          const SizedBox(height: kTooSmallSize),
           CustomTextField(
             size: kTooSmallSize,
             hintText: 'GroupB',
             label: 'GroupB',
             controller: controller.groupBController,
           ),
-          SizedBox(height: kTooSmallSize),
+          const SizedBox(height: kTooSmallSize),
           CustomTextField(
             size: kTooSmallSize,
             hintText: 'GroupBScore',
             label: 'GroupBScore',
             controller: controller.groupBScoreController,
           ),
-          SizedBox(height: kTooSmallSize),
+          const SizedBox(height: kTooSmallSize),
           CustomTextField(
             size: kTooSmallSize,
             hintText: 'Ramaining time',
             label: 'Ramaining time',
             controller: controller.remainingTimeController,
           ),
-          SizedBox(height: kTooSmallSize),
+          const SizedBox(height: kTooSmallSize),
           CustomTextField(
             size: kTooSmallSize,
             hintText: 'Total time',
             label: 'Total time',
             controller: controller.totalTimeController,
           ),
-          SizedBox(height: kTooSmallSize),
+          const SizedBox(height: kTooSmallSize),
           Row(
             children: [
-              Spacer(),
+              const Spacer(),
               ElevatedButton(
                 onPressed: () {
                   Get.back();
                 },
-                child: Text("Cancel"),
+                child: const Text("Cancel"),
               ),
-              SizedBox(width: 30),
+              const SizedBox(width: 30),
               ElevatedButton(
                 onPressed: () {
                   controller.addFootballScore();
                 },
-                child: Text("Add"),
+                child: const Text("Add"),
               ),
-              SizedBox(width: 30),
+              const SizedBox(width: 30),
             ],
           ),
         ],
@@ -88,7 +88,7 @@ class FirstScreen extends GetView<FirstScreenController> {
             onPressed: () {
               showMyDialog();
             },
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
           ),
         ],
       ),

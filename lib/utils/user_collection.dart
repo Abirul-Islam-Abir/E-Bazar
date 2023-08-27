@@ -1,1 +1,1 @@
-import 'package:cloud_firestore/cloud_firestore.dart';import 'all_instance.dart';class Collection {  static final collectionProfile = Instance.firestore.collection('UserProfile');  Collection._();}
+import 'all_instance.dart';class Collection {  static final collectionProfile = Instance.firestore.collection('UserProfile');  Collection._();}

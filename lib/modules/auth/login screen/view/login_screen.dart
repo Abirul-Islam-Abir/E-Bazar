@@ -49,10 +49,10 @@ class LoginScreen extends GetView<LoginScreenController> {
                         validator: validatePassword,
                         focusNode: controller.passwordFocus,
                         onFieldSubmitted: (v) {
-                          controller.validateSubmit();
+                          controller.isRemember
+                              ? controller.validateSubmit()
+                              : Get.snackbar('Warning!', 'Click the checkbox');
                         },
-
-
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.name,
                         controller: controller.passwordController,
@@ -65,33 +65,44 @@ class LoginScreen extends GetView<LoginScreenController> {
                     ],
                   ),
                   const SizedBox(height: kDefaultSize),
-                  CheckboxListTile(
-                    value: true,
-                    onChanged: (v) {},
-                    title: Row(
-                      children: [
-                        const CommonText(text: AppString.rememberMe),
-                        const Spacer(),
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            AppString.forgotPassword,
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
+                  GetBuilder<LoginScreenController>(builder: (controller) {
+                    return CheckboxListTile(
+                      value: controller.isRemember,
+                      onChanged: (value) {
+                        controller.isRememberSelect(value);
+                      },
+                      title: Row(
+                        children: [
+                          const CommonText(text: AppString.rememberMe),
+                          const Spacer(),
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              AppString.forgotPassword,
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    controlAffinity: ListTileControlAffinity.leading,
-                  ),
+                        ],
+                      ),
+                      controlAffinity: ListTileControlAffinity.leading,
+                    );
+                  }),
                   const SizedBox(height: kPrimaryBigSize),
-                  GlobalButton(
-                    onPress: () {
-                      controller.validateSubmit();
-                    },
-                    text: AppString.login,
-                  ),
+                  GetBuilder<LoginScreenController>(
+                      builder: (controller) => GlobalButton(
+                            color: controller.isRemember
+                                ? AppColor.kPrimaryColor
+                                : AppColor.kGreyColor,
+                            onPress: () {
+                              controller.isRemember
+                                  ? controller.validateSubmit()
+                                  : Get.snackbar(
+                                      'Warning!', 'Click the checkbox');
+                            },
+                            text: AppString.login,
+                          )),
                   const SizedBox(height: kPrimaryBigSize),
                   /*Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -1,4 +1,4 @@
-
+import 'package:shimmer/shimmer.dart';
 
 import '../../../../utils/export.dart';
 
@@ -7,23 +7,35 @@ class ProductCard extends StatelessWidget {
     super.key,
     required this.img,
     required this.name,
-    required this.price, required this.buyNow, required this.isFav,
+    required this.price,
+    required this.buyNow,
+    required this.isFav,
   });
 
   final String img, name, price;
-  final Function() buyNow,isFav;
+  final Function() buyNow, isFav;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 10,
       child: Padding(
-        padding:   const EdgeInsets.symmetric(horizontal: 5),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        padding: const EdgeInsets.symmetric(horizontal: 5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Align(
                 alignment: Alignment.center,
-                child: Image.network(img, height: 70, width: 70)),
+                child: Image.network(
+                  img,
+                  height: 70,
+                  width: 70,
+                  errorBuilder: (context, error, stackTrace) => Image.asset(
+                    'assets/images/no_internet.jpg',
+                    height: 70,
+                    width: 70,
+                  ),
+                )),
             const Spacer(),
             Text(name, style: Theme.of(context).textTheme.titleSmall),
             Text('\$$price',
@@ -43,15 +55,15 @@ class ProductCard extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                   shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.only(
-                                          topRight:
-                                          Radius.circular(kPrimaryBigSize))),
+                                          topRight: Radius.circular(
+                                              kPrimaryBigSize))),
                                   backgroundColor: AppColor.kPurpleColor),
-                              onPressed:buyNow,
+                              onPressed: buyNow,
                               child: const Text(AppString.buyNow)))),
                   Expanded(
                       flex: 1,
                       child: IconButton(
-                          onPressed:  isFav,
+                          onPressed: isFav,
                           icon: const Icon(
                             Icons.heart_broken,
                             color: AppColor.kRedColor,

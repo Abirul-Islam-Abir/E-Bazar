@@ -29,8 +29,7 @@ class CompleteProfileController extends GetxController {
       'FcmToken': UserData.userFcmToken
     }).then((value) {
       storeCompleteProfileUserData(
-        firstName: firstNameController.text.trim(),
-        lastName: lastNameController.text.trim(),
+        name: '${firstNameController.text} ${lastNameController.text}',
         address: addressController.text.trim(),
         mobile: mobileController.text,
       );

@@ -1,9 +1,16 @@
+import 'package:ecommerce_firebase/modules/network%20connectivity/controller/network_connectivity_controller.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'utils/export.dart';
 
 Future<void> main() async {
-  await initializer();
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
+  await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+  NotificationService().initializeApp();
+  Get.put(FcmMessagingController());
+  Get.put(NetworkController());
   runApp(const MyApp());
 }
 
@@ -21,19 +28,10 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: mainTheme(),
-          initialRoute: RouteName.matchScreen,
-          //  initialRoute: RouteName.splashScreen,
+          // initialRoute: RouteName.matchScreen,
+          initialRoute: RouteName.splashScreen,
           // initialRoute: RouteName.userAccountList,
           getPages: appPages(),
         );
       });
-}
-
-Future initializer() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  await GetStorage.init();
-  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
-  NotificationService().initializeApp();
-  Get.put(FcmMessagingController());
 }

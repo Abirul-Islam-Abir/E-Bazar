@@ -45,7 +45,6 @@ export 'package:flutter_local_notifications/flutter_local_notifications.dart';
 export '../modules/screens/home screen/component/build_app_bar.dart';
 export '../modules/screens/home screen/component/slider_widget.dart';
 export '../modules/screens/home screen/component/more_button.dart';
-export '../modules/screens/home screen/component/product_card.dart';
 export 'dart:async';
 export '../api/onboarding_image_api.dart';
 export '../modules/screens/onbording screen/controller/onborading_controller.dart';
@@ -55,7 +54,6 @@ export '../modules/screens/login success screen/controller/login_success_screen_
 export '../modules/screens/onbording screen/component/page_view_card.dart';
 export 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 export '../utils/base64_image_method.dart';
-export '../utils/export.dart';
 export '../utils/validate_method.dart';
 export '../api/login_api.dart';
 export '../modules/auth/login screen/view/login_screen.dart';

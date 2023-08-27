@@ -1,9 +1,10 @@
 import 'package:ecommerce_firebase/admin/user_list_screen/view/user_list_screen.dart';
+import 'package:ecommerce_firebase/modules/screens/profile%20update%20screen/binding/profile_update_binding.dart';
 import 'package:ecommerce_firebase/modules/screens/splash%20screen/binding/splash_screen_binding.dart';
 import 'package:ecommerce_firebase/modules/screens/splash%20screen/view/splash_screen.dart';
-
 import '../assignment/first_screen.dart';
 import '../assignment/first_screen_binding.dart';
+import '../modules/screens/profile update screen/view/profile_update_screen.dart';
 import '../utils/export.dart';
 
 List<GetPage<dynamic>>? appPages() => [
@@ -57,7 +58,7 @@ List<GetPage<dynamic>>? appPages() => [
           transitionDuration: const Duration(microseconds: 500)),
       GetPage(
           name: RouteName.userAccountList,
-          page: () => UserAccountList(),
+          page: () => const UserAccountList(),
           binding: FirstScreenBinding(),
           transition: Transition.fade,
           transitionDuration: const Duration(microseconds: 500)),
@@ -65,6 +66,12 @@ List<GetPage<dynamic>>? appPages() => [
           name: RouteName.splashScreen,
           page: () => const SplashScreen(),
           binding: SplashScreenBinding(),
+          transition: Transition.fade,
+          transitionDuration: const Duration(microseconds: 500)),
+      GetPage(
+          name: RouteName.updateProfileScreen,
+          page: () => const ProfileUpdateScreen(),
+          binding: ProfileUpdateBinding(),
           transition: Transition.fade,
           transitionDuration: const Duration(microseconds: 500)),
     ];
