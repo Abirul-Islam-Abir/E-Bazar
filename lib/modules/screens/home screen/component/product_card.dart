@@ -1,5 +1,3 @@
-import 'package:shimmer/shimmer.dart';
-
 import '../../../../utils/export.dart';
 
 class ProductCard extends StatelessWidget {

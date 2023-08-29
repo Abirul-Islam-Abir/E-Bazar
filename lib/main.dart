@@ -4,6 +4,10 @@ import 'package:get_storage/get_storage.dart';
 import 'utils/export.dart';
 
 Future<void> main() async {
+  await initializeApp();
+}
+
+Future initializeApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   await Firebase.initializeApp();
@@ -16,6 +20,11 @@ Future<void> main() async {
 
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
+  if (message.notification != null) {
+    print('firebaseMessagingBackgroundHandler');
+    NotificationService().showNotification('${message.notification!.title}',
+        '${message.notification!.body}', '${message.notification!.android}');
+  }
 }
 
 class MyApp extends StatelessWidget {

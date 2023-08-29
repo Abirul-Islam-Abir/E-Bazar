@@ -1,0 +1,1 @@
+import 'package:ecommerce_firebase/modules/screens/map%20screen/controller/map_screen_controller.dart';import 'package:get/get.dart';class MapScreenBinding extends Bindings {  @override  void dependencies() {    Get.lazyPut(() => MapScreenController());  }}

@@ -108,7 +108,6 @@ class FirstScreen extends GetView<FirstScreenController> {
                   QueryDocumentSnapshot<Object?> data =
                       snapshot.data!.docs[index];
                   NotificationService().showNotification(
-                      1,
                       '${data['groupA']} VS ${data['groupB']} ',
                       'RemainingTime: ${data['remainingTime']}',
                       'remainingTime: ${data['remainingTime']}');

@@ -1,12 +1,12 @@
 import 'package:ecommerce_firebase/api/get_user_profile_api.dart';
 import 'package:ecommerce_firebase/model/user_profile_model.dart';
-import 'package:ecommerce_firebase/modules/network%20connectivity/controller/network_connectivity_controller.dart';
 import 'package:ecommerce_firebase/utils/shared_pref.dart';
 import 'package:ecommerce_firebase/utils/storage_key.dart';
 import 'package:ecommerce_firebase/utils/user_collection.dart';
 
 import '../../../../utils/all_instance.dart';
 import '../../../../utils/export.dart';
+import '../../../../utils/store_data.dart';
 
 class HomeScreenController extends GetxController {
   bool _isLoading = false;
@@ -66,8 +66,8 @@ class HomeScreenController extends GetxController {
     productList.clear(); // Clear existing data.
     sliderImageList.clear();
     userProfileList.clear();
-
     try {
+      getUserData();
       await getAccessoriesProduct();
       await getSliderImage();
       await setupToken();
@@ -77,22 +77,35 @@ class HomeScreenController extends GetxController {
       // Handle any errors that may occur during data loading.
       print('Error loading data: $e');
     } finally {
-      if (Get.find<NetworkController>().connectionType == 0) {
-        _isLoading =
-            false; // Set loading state to false after loading or error.
-        update(); // Notify the UI of the change.
-        print('-----------------------------------------0');
-      } else {
-        _isLoading = true; // Set loading state to false after loading or error.
-        update(); // Notify the UI of the change.
-        print('-----------------------------------------1');
-      }
-      update(); // Notify the UI of the change.
+      _isLoading = true; // Set loading state to false after loading or error.
+      update();
     }
+  }
+
+  Future refreshPage() async {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      update();
+    });
+  }
+
+  Future getUserData() async {
+    String? emailData = storageInstance.read(StorageKey.setEmailKey);
+    String? passwordData = storageInstance.read(StorageKey.setPasswordKey);
+    String? photoData = storageInstance.read(StorageKey.setPhotoKey);
+    String? mobileData = storageInstance.read(StorageKey.setMobileKey);
+    String? nameData = storageInstance.read(StorageKey.setNameKey);
+    String? fcmTokenData = storageInstance.read(StorageKey.setFcmToken);
+    UserData.userEmail = emailData!;
+    UserData.userPassword = passwordData!;
+    UserData.userPhoto = photoData!;
+    UserData.userMobile = mobileData!;
+    UserData.userName = nameData!;
+    UserData.userFcmToken = fcmTokenData!;
   }
 
   @override
   void onInit() {
+    refreshPage();
     reinitializeController();
     super.onInit();
   }

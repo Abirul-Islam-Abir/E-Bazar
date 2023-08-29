@@ -21,6 +21,7 @@ class RouteName {
   static const settingsScreen = '/Settings_Screen';
   static const aboutScreen = '/About_Screen';
   static const logOutScreen = '/Log_Out_Screen';
+  static const mapScreen = '/Map_Screen';
 
   // Helper function to generate unique route names
   static String generateUniqueRouteName() {

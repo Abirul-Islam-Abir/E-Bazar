@@ -19,7 +19,6 @@ class FirstScreenController extends GetxController {
       'totalTime': '${totalTimeController.text}:00',
     }).then((value) {
       NotificationService().showNotification(
-          1,
           '${groupAController.text} VS ${groupBController.text}',
           'Starting new football match!',
           'payload');

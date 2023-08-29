@@ -6,9 +6,7 @@ AppBar buildAppBar() {
     title: const HeadlineText(text: 'E-Bazar'),
     actions: [
       IconButton(
-          onPressed: () async {
-            Get.find<HomeScreenController>().logOut();
-          },
+          onPressed: () async {},
           icon: const Icon(Icons.shopping_cart_checkout))
     ],
   );

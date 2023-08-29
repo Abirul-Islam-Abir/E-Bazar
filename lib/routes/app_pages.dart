@@ -1,4 +1,6 @@
 import 'package:ecommerce_firebase/admin/user_list_screen/view/user_list_screen.dart';
+import 'package:ecommerce_firebase/modules/screens/map%20screen/binding/map_screen_binding.dart';
+import 'package:ecommerce_firebase/modules/screens/map%20screen/view/map_screen.dart';
 import 'package:ecommerce_firebase/modules/screens/profile%20update%20screen/binding/profile_update_binding.dart';
 import 'package:ecommerce_firebase/modules/screens/splash%20screen/binding/splash_screen_binding.dart';
 import 'package:ecommerce_firebase/modules/screens/splash%20screen/view/splash_screen.dart';
@@ -72,6 +74,12 @@ List<GetPage<dynamic>>? appPages() => [
           name: RouteName.updateProfileScreen,
           page: () => const ProfileUpdateScreen(),
           binding: ProfileUpdateBinding(),
+          transition: Transition.fade,
+          transitionDuration: const Duration(microseconds: 500)),
+      GetPage(
+          name: RouteName.mapScreen,
+          page: () => const MapScreen(),
+          binding: MapScreenBinding(),
           transition: Transition.fade,
           transitionDuration: const Duration(microseconds: 500)),
     ];
