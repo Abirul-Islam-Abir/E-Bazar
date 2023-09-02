@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
@@ -33,6 +37,9 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="your_default_channel_id" />
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBxuJVId5I1XVIAHTbWkSt5ERBiPsFA0sI"/>
+
     </application>
 
 </manifest>

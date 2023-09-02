@@ -1,43 +1,39 @@
 import 'package:ecommerce_firebase/api/get_user_profile_api.dart';
-import 'package:ecommerce_firebase/model/user_profile_model.dart';
 import 'package:ecommerce_firebase/utils/shared_pref.dart';
 import 'package:ecommerce_firebase/utils/storage_key.dart';
 import 'package:ecommerce_firebase/utils/user_collection.dart';
 
 import '../../../../utils/all_instance.dart';
 import '../../../../utils/export.dart';
-import '../../../../utils/store_data.dart';
+import '../component/lists.dart';
 
 class HomeScreenController extends GetxController {
   bool _isLoading = false;
 
   bool get isLoading => _isLoading;
-  List<ProductModel> productList = [];
-  List<SliderImageModel> sliderImageList = [];
-  List<UserProfileModel> userProfileList = [];
   final firestore = FirebaseFirestore.instance;
 
-  Future getAccessoriesProduct() async {
+  Future<void> getAccessoriesProduct() async {
     await getProductRequestApi(list: productList, path: 'Products');
   }
 
-  Future getSliderImage() async {
+  Future<void> getSliderImage() async {
     await getSliderImageRequestApi(list: sliderImageList, path: 'BannerImage');
   }
 
-  Future getUserProfileData() async {
+  Future<void> getUserProfileData() async {
     await getUserProfileDataRequestApi(
         path: Collection.collectionProfile, list: userProfileList);
   }
 
-  Future logOut() async {
+  Future<void> logOut() async {
     storageInstance.remove(StorageKey.setTokenKey);
     await FirebaseAuth.instance.signOut().then(
           (value) => Get.offAllNamed(RouteName.loginScreen),
         );
   }
 
-  Future tokenGet() async {
+  Future<void> tokenGet() async {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       var token = await user.getIdToken();
@@ -63,16 +59,17 @@ class HomeScreenController extends GetxController {
   void reinitializeController() async {
     _isLoading = false; // Set loading state to true.
     update(); // Notify the UI of the change.
-    productList.clear(); // Clear existing data.
-    sliderImageList.clear();
-    userProfileList.clear();
+
     try {
-      getUserData();
+      productList.clear(); // Clear existing data.
+      sliderImageList.clear();
+      userProfileList.clear();
+      await getUserProfileData();
       await getAccessoriesProduct();
       await getSliderImage();
       await setupToken();
-      await getUserProfileData();
       await tokenGet();
+      refreshPage();
     } catch (e) {
       // Handle any errors that may occur during data loading.
       print('Error loading data: $e');
@@ -82,30 +79,14 @@ class HomeScreenController extends GetxController {
     }
   }
 
-  Future refreshPage() async {
+  Future<void> refreshPage() async {
     Timer.periodic(const Duration(seconds: 1), (timer) {
       update();
     });
   }
 
-  Future getUserData() async {
-    String? emailData = storageInstance.read(StorageKey.setEmailKey);
-    String? passwordData = storageInstance.read(StorageKey.setPasswordKey);
-    String? photoData = storageInstance.read(StorageKey.setPhotoKey);
-    String? mobileData = storageInstance.read(StorageKey.setMobileKey);
-    String? nameData = storageInstance.read(StorageKey.setNameKey);
-    String? fcmTokenData = storageInstance.read(StorageKey.setFcmToken);
-    UserData.userEmail = emailData!;
-    UserData.userPassword = passwordData!;
-    UserData.userPhoto = photoData!;
-    UserData.userMobile = mobileData!;
-    UserData.userName = nameData!;
-    UserData.userFcmToken = fcmTokenData!;
-  }
-
   @override
   void onInit() {
-    refreshPage();
     reinitializeController();
     super.onInit();
   }

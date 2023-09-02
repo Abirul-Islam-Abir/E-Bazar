@@ -1,0 +1,1 @@
+import '../../../../model/product_model.dart';import '../../../../model/slider_image_model.dart';import '../../../../model/user_profile_model.dart';List<ProductModel> productList = [];List<SliderImageModel> sliderImageList = [];List<UserProfileModel> userProfileList = [];

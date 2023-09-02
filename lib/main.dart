@@ -21,7 +21,6 @@ Future initializeApp() async {
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
   if (message.notification != null) {
-    print('firebaseMessagingBackgroundHandler');
     NotificationService().showNotification('${message.notification!.title}',
         '${message.notification!.body}', '${message.notification!.android}');
   }
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: mainTheme(),
           // initialRoute: RouteName.matchScreen,
-          initialRoute: RouteName.splashScreen,
+          initialRoute: RouteName.mapScreen,
           // initialRoute: RouteName.userAccountList,
           getPages: appPages(),
         );
