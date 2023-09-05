@@ -1,13 +1,12 @@
 
-<p align="center">
-  <img src="[URL_OF_YOUR_IMAGE](https://www.freecodecamp.org/news/content/images/2022/12/main-image.png)" alt="Your Name's Profile Image" width="200" height="200">
-</p>
-
+ 
 <img align="center" src="[[URL_OF_YOUR_IMAGE]()](https://www.freecodecamp.org/news/content/images/2022/12/main-image.png)" alt="Greetings, I'm Abirul Islam Abir, Experienced Mobile App Development, Proficient in Java & Flutter | Passionate about crafting user-friendly and innovative mobile applications. Committed to delivering high-quality, efficient, and scalable solutions to enhance user experiences. Seeking opportunities to collaborate on exciting projects and further expand my skills in the dynamic world of mobile app development." />
 
 
 <h1 align="center">Hi 👋, I'm Abirul Islam Abir</h1>
 <h3 align="center">A passionate frontend Flutter developer from Bangladesh</h3>
+
+<img align="right" alt="Coding" width="400" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif">
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=abir&label=Profile%20views&color=0e75b6&style=flat" alt="abir" /> </p>
 
