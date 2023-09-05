@@ -1,9 +1,8 @@
 
 <h1 align="center">Hi 👋, I'm Abirul Islam Abir</h1>
 <h3 align="center">A passionate frontend Flutter developer from Bangladesh</h3> 
-
- <img align="center" alt="Coding" width="400" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif"> 
-
+  <h3 <img align="center" alt="Coding" width="400" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif"> </h3> 
+ 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=abir" alt="abir" /></a> </p>
 
 <p align="left"> <a href="https://twitter.com/abirulislamabir" target="blank"><img src="https://img.shields.io/twitter/follow/abirulislamabir?logo=twitter&style=for-the-badge" alt="abirulislamabir" /></a> </p>
