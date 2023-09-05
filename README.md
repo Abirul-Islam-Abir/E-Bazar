@@ -1,4 +1,9 @@
-<img align="center" src="[URL_OF_YOUR_IMAGE](https://www.freecodecamp.org/news/content/images/2022/12/main-image.png)" alt="Greetings, I'm Abirul Islam Abir, Experienced Mobile App Development, Proficient in Java & Flutter | Passionate about crafting user-friendly and innovative mobile applications. Committed to delivering high-quality, efficient, and scalable solutions to enhance user experiences. Seeking opportunities to collaborate on exciting projects and further expand my skills in the dynamic world of mobile app development." />
+
+<p align="center">
+  <img src="[URL_OF_YOUR_IMAGE](https://www.freecodecamp.org/news/content/images/2022/12/main-image.png)" alt="Your Name's Profile Image" width="200" height="200">
+</p>
+
+<img align="center" src="[[URL_OF_YOUR_IMAGE]()](https://www.freecodecamp.org/news/content/images/2022/12/main-image.png)" alt="Greetings, I'm Abirul Islam Abir, Experienced Mobile App Development, Proficient in Java & Flutter | Passionate about crafting user-friendly and innovative mobile applications. Committed to delivering high-quality, efficient, and scalable solutions to enhance user experiences. Seeking opportunities to collaborate on exciting projects and further expand my skills in the dynamic world of mobile app development." />
 
 
 <h1 align="center">Hi 👋, I'm Abirul Islam Abir</h1>
