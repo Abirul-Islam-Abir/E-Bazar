@@ -36,9 +36,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: mainTheme(),
-          // initialRoute: RouteName.matchScreen,
           initialRoute: RouteName.mapScreen,
-          // initialRoute: RouteName.userAccountList,
           getPages: appPages(),
         );
       });
