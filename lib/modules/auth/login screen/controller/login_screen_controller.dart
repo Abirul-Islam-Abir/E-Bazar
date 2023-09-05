@@ -15,14 +15,19 @@ class LoginScreenController extends GetxController {
     update();
   }
 
+  var isPasswordVisible = true.obs;
+
+
+
+
   void loginRequest() async {
     bool response = await loginRequestApi(
         emailAddress: emailController.text.trim(),
-        password: passwordController.text.trim());
+        password: passwordController.text);
     if (response == true) {
       storeLoginData(
           email: emailController.text.trim(),
-          password: passwordController.text.trim(),
+          password: passwordController.text,
           remember: true);
       Get.snackbar('Great!', 'Login successfully');
       Get.offNamed(RouteName.homeScreen);

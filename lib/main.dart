@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: mainTheme(),
           // initialRoute: RouteName.matchScreen,
-          initialRoute: RouteName.mapScreen,
+          initialRoute: RouteName.loginScreen,
           // initialRoute: RouteName.userAccountList,
           getPages: appPages(),
         );
