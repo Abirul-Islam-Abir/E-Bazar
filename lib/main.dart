@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: mainTheme(),
-          initialRoute: RouteName.mapScreen,
+          initialRoute: RouteName.loginScreen,
           getPages: appPages(),
         );
       });
