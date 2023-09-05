@@ -45,22 +45,32 @@ class LoginScreen extends GetView<LoginScreenController> {
                             onPressed: () {}, icon: const Icon(Icons.email)),
                       ),
                       const SizedBox(height: kSmallSize),
-                      CustomTextField(
-                        validator: validatePassword,
-                        focusNode: controller.passwordFocus,
-                        onFieldSubmitted: (v) {
-                          controller.isRemember
-                              ? controller.validateSubmit()
-                              : Get.snackbar('Warning!', 'Click the checkbox');
-                        },
-                        textInputAction: TextInputAction.next,
-                        keyboardType: TextInputType.name,
-                        controller: controller.passwordController,
-                        hintText: AppString.password,
-                        label: AppString.enterYourPassword,
-                        suffixIcon: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.remove_red_eye)),
+                      Obx(
+                        () => CustomTextField(
+                          validator: validatePassword,
+                          focusNode: controller.passwordFocus,
+                          onFieldSubmitted: (v) {
+                            controller.isRemember
+                                ? controller.validateSubmit()
+                                : Get.snackbar(
+                                    'Warning!', 'Click the checkbox');
+                          },
+                          textInputAction: TextInputAction.next,
+                          keyboardType: TextInputType.name,
+                          controller: controller.passwordController,
+                          hintText: AppString.password,
+                          label: AppString.enterYourPassword,
+                          obscureText: controller.isPasswordVisible.value,
+                          suffixIcon: IconButton(
+                            icon: Icon(controller.isPasswordVisible.value
+                                ? Icons.visibility
+                                : Icons.visibility_off),
+                            onPressed: () {
+                              controller.isPasswordVisible.value =
+                                  !controller.isPasswordVisible.value;
+                            },
+                          ),
+                        ),
                       ),
                     ],
                   ),
