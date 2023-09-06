@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       Sizer(builder: (context, orientation, deviceType) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: AppInfo.appName,
           theme: mainTheme(),
           initialRoute: RouteName.loginScreen,
           getPages: appPages(),
