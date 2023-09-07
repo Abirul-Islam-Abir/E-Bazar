@@ -6,29 +6,35 @@ class SeveralOption extends StatelessWidget {
     required this.size,
     required this.iconData,
     required this.text,
+    required this.onTap,
   });
 
   final Size size;
   final IconData iconData;
   final String text;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          width: size.width * 0.16,
-          height: size.height * 0.09,
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 250, 232, 220),
-            borderRadius: BorderRadius.circular(7),
-          ),
-          child: Icon(
-            iconData,
-            size: size.width * 0.06,
-            color: const Color.fromARGB(255, 250, 182, 158),
-          ),
-        ),
+            width: size.width * 0.16,
+            height: size.height * 0.09,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 250, 232, 220),
+              borderRadius: BorderRadius.circular(7),
+            ),
+            child: IconButton(
+              onPressed: () {
+                onTap(); //take action when user click on icon
+              },
+              icon: Icon(
+                iconData,
+                size: size.width * 0.07,
+                color: const Color.fromARGB(255, 250, 182, 158),
+              ),
+            )),
         SizedBox(
           height: size.height * 0.009,
         ),

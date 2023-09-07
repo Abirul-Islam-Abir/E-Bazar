@@ -5,10 +5,12 @@ class PopularProduct extends StatelessWidget {
     super.key,
     required this.size,
     required this.image,
+    required this.onTap,
   });
 
   final Size size;
   final String image;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,15 @@ class PopularProduct extends StatelessWidget {
       decoration: BoxDecoration(
           color: const Color.fromARGB(255, 237, 238, 241),
           borderRadius: BorderRadius.circular(10)),
-      child: Image.asset(
-        image,
-        cacheHeight: (size.height * 0.14).toInt(),
-        cacheWidth: (size.width * 0.23).toInt(),
+      child: GestureDetector(
+        onTap: () {
+          onTap();
+        },
+        child: Image.asset(
+          image,
+          cacheHeight: (size.height * 0.14).toInt(),
+          cacheWidth: (size.width * 0.23).toInt(),
+        ),
       ),
     );
   }

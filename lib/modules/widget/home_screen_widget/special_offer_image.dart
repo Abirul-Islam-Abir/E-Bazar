@@ -7,13 +7,14 @@ class SpecialOfferImage extends StatelessWidget {
     required this.image,
     required this.title,
     required this.subtitle,
+    required this.onTap,
   });
 
   final Size size;
   final String image;
   final String title;
   final String subtitle;
-
+  final Function onTap;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -26,10 +27,16 @@ class SpecialOfferImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           child: Stack(
             children: [
-              Image.asset(
-                image,
-                fit: BoxFit.cover,
-                width: size.width * 0.6,
+              GestureDetector(
+                onTap: () {
+                  // print("click on special offer");
+                  onTap();
+                },
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  width: size.width * 0.6,
+                ),
               ),
               Positioned(
                 top: size.height *

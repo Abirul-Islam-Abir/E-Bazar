@@ -27,6 +27,7 @@ dependencies:
   connectivity_plus: ^4.0.2
   google_maps_flutter: ^2.4.0
   location: ^5.0.3
+  material_design_icons_flutter: ^7.0.7296
 
 
 

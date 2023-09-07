@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '../../../../utils/image_path/image_path.dart';
 import '../../../widget/home_screen_widget/cash_back_offer.dart';
 import '../../../widget/home_screen_widget/popular_product.dart';
@@ -14,7 +14,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     return Scaffold(
-    
       body: SafeArea(
           child: SingleChildScrollView(
         child: Padding(
@@ -41,22 +40,34 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: SeveralOption(
                       size: size,
-                      iconData: Icons.wallet_giftcard,
+                      iconData: Icons.flash_on_rounded,
                       text: 'Flash Deal',
+                      onTap: () {
+                        print("click on Flash deal");
+                      },
                     ),
                   ),
                   Expanded(
                     child: SeveralOption(
                       size: size,
-                      iconData: Icons.wallet_giftcard,
+                      // iconData: Icons.wallet_giftcard,
+                      // iconData: Icons.gas_meter_sharp,
+                      iconData: MdiIcons.newspaperVariant,
                       text: 'Bill',
+                      onTap: () {
+                        print("click on Bill");
+                      },
                     ),
                   ),
                   Expanded(
                     child: SeveralOption(
                       size: size,
-                      iconData: Icons.wallet_giftcard,
+                      // iconData: Icons.wallet_giftcard,
+                      iconData: MdiIcons.controllerClassic,
                       text: 'Game',
+                      onTap: () {
+                        print("click on Games");
+                      },
                     ),
                   ),
                   Expanded(
@@ -64,13 +75,19 @@ class HomeScreen extends StatelessWidget {
                       size: size,
                       iconData: Icons.wallet_giftcard,
                       text: 'Daily Gift',
+                      onTap: () {
+                        print("click on Daily Gift");
+                      },
                     ),
                   ),
                   Expanded(
                     child: SeveralOption(
                       size: size,
-                      iconData: Icons.wallet_giftcard,
+                      iconData: MdiIcons.leafCircle,
                       text: 'More',
+                      onTap: () {
+                        print("click on More");
+                      },
                     ),
                   ),
                 ],
@@ -109,19 +126,26 @@ class HomeScreen extends StatelessWidget {
                       image: ImagePath.mobile,
                       title: "Headline Text 1",
                       subtitle: "Subtitle Text 1",
+                      onTap: () {
+                        print("click on first offer of image");
+                      },
                     ),
                     SpecialOfferImage(
-                      size: size,
-                      image: ImagePath.mobile,
-                      title: "Headline Text 2",
-                      subtitle: "Subtitle Text 2",
-                    ),
+                        size: size,
+                        image: ImagePath.mobile,
+                        title: "Headline Text 2",
+                        subtitle: "Subtitle Text 2",
+                        onTap: () {
+                          print("click on second offer of image");
+                        }),
                     SpecialOfferImage(
-                      size: size,
-                      image: ImagePath.mobile,
-                      title: "Headline Text 3",
-                      subtitle: "Subtitle Text 3",
-                    ),
+                        size: size,
+                        image: ImagePath.mobile,
+                        title: "Headline Text 3",
+                        subtitle: "Subtitle Text 3",
+                        onTap: () {
+                          print("click on third offer of image");
+                        }),
                   ],
                 ),
               ),
@@ -156,18 +180,30 @@ class HomeScreen extends StatelessWidget {
                     PopularProduct(
                       size: size,
                       image: ImagePath.mobile,
+                      onTap: () {
+                        print("Click on First popular Product");
+                      },
                     ),
                     PopularProduct(
                       size: size,
                       image: ImagePath.mobile,
+                      onTap: () {
+                        print("Click on Second popular Product");
+                      },
                     ),
                     PopularProduct(
                       size: size,
                       image: ImagePath.mobile,
+                      onTap: () {
+                        print("Click on Third popular Product");
+                      },
                     ),
                     PopularProduct(
                       size: size,
                       image: ImagePath.mobile,
+                      onTap: () {
+                        print("Click on Fourth popular Product");
+                      },
                     ),
                   ],
                 ),
