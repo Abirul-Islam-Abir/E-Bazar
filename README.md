@@ -1,31 +1,6 @@
 
-<h1 align="center">Hi 👋, I'm Abirul Islam Abir</h1>
-<h3 align="center">A passionate frontend Flutter developer from Bangladesh</h3> 
-<img  <h3  align="center" alt="Coding" width="1000" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" </h3> >
+
  
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=abir" alt="abir" /></a> </p>
-
-<p align="left"> <a href="https://twitter.com/abirulislamabir" target="blank"><img src="https://img.shields.io/twitter/follow/abirulislamabir?logo=twitter&style=for-the-badge" alt="abirulislamabir" /></a> </p>
-
-- 🔭 I’m currently working on [Task Manager](https://github.com/FreelancerAbir1/Task-Manager-Using-Getx)
-
-- 🌱 I’m currently learning **Flutter,Dart,Java**
-
-- 👯 I’m looking to collaborate on [E-Bazar](https://github.com/FreelancerAbir1/E-Bazar)
-
-- 🤝 I’m looking for help with [E-Bazar Community](https://github.com/FreelancerAbir1/E-Bazar)
-
-- 👨‍💻 All of my projects are available at [https://github.com/FreelancerAbir1/Portfolio](https://github.com/FreelancerAbir1/Portfolio)
-
-- 📝 I regularly write articles on [https://www.linkedin.com/in/abirul-islam-abir/](https://www.linkedin.com/in/abirul-islam-abir/)
-
-- 💬 Ask me about **Flutter,Dart,Java**
-
-- 📫 How to reach me **abir80503@gmail.com**
-
-### Blogs posts
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
