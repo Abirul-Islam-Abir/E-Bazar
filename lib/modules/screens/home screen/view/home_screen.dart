@@ -4,7 +4,7 @@ import '../../../../utils/image_path/image_path.dart';
 import '../../../widget/home_screen_widget/cash_back_offer.dart';
 import '../../../widget/home_screen_widget/popular_product.dart';
 import '../../../widget/home_screen_widget/search_product.dart';
-import '../../../widget/home_screen_widget/several_option.dart';
+import '../../../widget/home_screen_widget/several_option_with_icon.dart';
 import '../../../widget/home_screen_widget/special_offer_image.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                 height: size.height * 0.04,
               ),
               //widget for several option
-              SeveralOption(
+              SeveralOptionWithIcon(
                 size: size,
               ),
               //height space

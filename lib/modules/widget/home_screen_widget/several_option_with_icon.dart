@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../model/home_screen_model.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class SeveralOption extends StatelessWidget {
-  SeveralOption({
+class SeveralOptionWithIcon extends StatelessWidget {
+  SeveralOptionWithIcon({
     super.key,
     required this.size,
     /*    required this.iconData,
