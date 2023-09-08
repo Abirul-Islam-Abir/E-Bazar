@@ -118,35 +118,8 @@ class HomeScreen extends StatelessWidget {
               //Special offer for you
               SizedBox(
                 height: size.height * 0.15,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    SpecialOfferImage(
-                      size: size,
-                      image: ImagePath.mobile,
-                      title: "Headline Text 1",
-                      subtitle: "Subtitle Text 1",
-                      onTap: () {
-                        print("click on first offer of image");
-                      },
-                    ),
-                    SpecialOfferImage(
-                        size: size,
-                        image: ImagePath.mobile,
-                        title: "Headline Text 2",
-                        subtitle: "Subtitle Text 2",
-                        onTap: () {
-                          print("click on second offer of image");
-                        }),
-                    SpecialOfferImage(
-                        size: size,
-                        image: ImagePath.mobile,
-                        title: "Headline Text 3",
-                        subtitle: "Subtitle Text 3",
-                        onTap: () {
-                          print("click on third offer of image");
-                        }),
-                  ],
+                child: SpecialOfferImage(
+                  size: size,
                 ),
               ),
               //height space
