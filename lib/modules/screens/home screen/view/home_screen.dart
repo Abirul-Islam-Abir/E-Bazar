@@ -35,62 +35,8 @@ class HomeScreen extends StatelessWidget {
                 height: size.height * 0.04,
               ),
               //widget for several option
-              Row(
-                children: [
-                  Expanded(
-                    child: SeveralOption(
-                      size: size,
-                      iconData: Icons.flash_on_rounded,
-                      text: 'Flash Deal',
-                      onTap: () {
-                        print("click on Flash deal");
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: SeveralOption(
-                      size: size,
-                      // iconData: Icons.wallet_giftcard,
-                      // iconData: Icons.gas_meter_sharp,
-                      iconData: MdiIcons.newspaperVariant,
-                      text: 'Bill',
-                      onTap: () {
-                        print("click on Bill");
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: SeveralOption(
-                      size: size,
-                      // iconData: Icons.wallet_giftcard,
-                      iconData: MdiIcons.controllerClassic,
-                      text: 'Game',
-                      onTap: () {
-                        print("click on Games");
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: SeveralOption(
-                      size: size,
-                      iconData: Icons.wallet_giftcard,
-                      text: 'Daily Gift',
-                      onTap: () {
-                        print("click on Daily Gift");
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: SeveralOption(
-                      size: size,
-                      iconData: MdiIcons.leafCircle,
-                      text: 'More',
-                      onTap: () {
-                        print("click on More");
-                      },
-                    ),
-                  ),
-                ],
+              SeveralOption(
+                size: size,
               ),
               //height space
               SizedBox(

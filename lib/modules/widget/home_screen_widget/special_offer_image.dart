@@ -12,15 +12,15 @@ class SpecialOfferImage extends StatelessWidget {
   final Size size;
 
   final List<HomeScreenModel> specialOfferForYou = [
-    HomeScreenModel(
+    HomeScreenModel.specialOffer(
         image: ImagePath.gadgets1, title: "SmartPhone", subtitle: "18 Brands"),
-    HomeScreenModel(
+    HomeScreenModel.specialOffer(
         image: ImagePath.fashion, title: "Fashion", subtitle: "24 Brands"),
-    HomeScreenModel(
+    HomeScreenModel.specialOffer(
         image: ImagePath.gadgets2, title: "SmartPhone", subtitle: "18 Brands"),
-    HomeScreenModel(
+    HomeScreenModel.specialOffer(
         image: ImagePath.gadgets3, title: "SmartPhone", subtitle: "18 Brands"),
-    HomeScreenModel(
+    HomeScreenModel.specialOffer(
         image: ImagePath.mobile, title: "SmartPhone", subtitle: "18 Brands"),
   ];
   @override
@@ -45,10 +45,11 @@ class SpecialOfferImage extends StatelessWidget {
                         // onTap();
                       },
                       child: ColorFiltered(
+                        // make image dark color
                         colorFilter:
                             ColorFilter.mode(Colors.black45, BlendMode.darken),
                         child: Image.asset(
-                          specialOfferForYou[index].image,
+                          specialOfferForYou[index].image!,
                           fit: BoxFit.cover,
                           width: size.width * 0.6,
                         ),
@@ -61,7 +62,7 @@ class SpecialOfferImage extends StatelessWidget {
                           0.05, // Adjust the position of the text as needed
                       child: Text(
                         specialOfferForYou[index]
-                            .title, // Replace with your text
+                            .title!, // Replace with your text
                         style: TextStyle(
                           fontSize: size.width * 0.04,
                           fontWeight: FontWeight.bold,
@@ -76,7 +77,7 @@ class SpecialOfferImage extends StatelessWidget {
                           0.05, // Adjust the position of the text as needed
                       child: Text(
                         // subtitle,
-                        specialOfferForYou[index].subtitle,
+                        specialOfferForYou[index].subtitle!,
                         style: TextStyle(
                           fontSize: size.width * 0.03,
                           color: Colors.white,

@@ -1,7 +1,12 @@
+import 'package:ecommerce_firebase/utils/export.dart';
+
 class HomeScreenModel {
-  final String image;
-  final String title;
-  final String subtitle;
-  HomeScreenModel(
+   String? image;
+   String? title;
+   String? subtitle;
+   IconData? icon;
+  HomeScreenModel.specialOffer(
       {required this.image, required this.title, required this.subtitle});
+      HomeScreenModel.icons({required this.icon});
 }
+
