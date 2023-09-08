@@ -24,7 +24,7 @@ List<GetPage<dynamic>>? appPages() => [
           transitionDuration: const Duration(microseconds: 500)),
       GetPage(
           name: RouteName.homeScreen,
-          page: () => const HomeScreen(),
+          page: () =>  HomeScreen(),
           binding: HomeScreenBinding(),
           transition: Transition.fade,
           transitionDuration: const Duration(microseconds: 500)),
