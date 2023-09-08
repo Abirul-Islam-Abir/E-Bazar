@@ -93,7 +93,11 @@ class HomeScreen extends StatelessWidget {
               //popular product image
               SizedBox(
                 height: size.height * 0.2,
-                child: ListView(
+                child: PopularProduct(
+                      size: size,
+                    
+                    ),
+                /* child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
                     PopularProduct(
@@ -125,7 +129,7 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                   ],
-                ),
+                ), */
               )
             ],
           ),
